@@ -47,7 +47,7 @@ class CarInterface(CarInterfaceBase):
 
     # Jeep
     elif candidate == CAR.JEEP_CHEROKEE_5TH_GEN:
-      ret.steerActuatorDelay = 0.25
+      ret.steerActuatorDelay = 0.175
       ret.lateralTuning.init('pid')
       # Adjusting breakpoints to be closer to our actual engagement speeds
       # 18 m/s is about 40mph, 27 m/s is about 60mph
