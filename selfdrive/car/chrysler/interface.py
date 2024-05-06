@@ -55,7 +55,7 @@ class CarInterface(CarInterfaceBase):
       # Borrowing these tuning values from the Subaru Forester, similar size/weight, just chopped off the low end
       # https://www.carsized.com/en/cars/compare/jeep-cherokee-2018-suv-trailhawk-vs-subaru-forester-2018-suv/front/
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.065, 0.2], [0.015, 0.025]]
-      ret.lateralTuning.pid.kf = 0.00005
+      ret.lateralTuning.pid.kf = 0.0001
 
     elif candidate in (CAR.JEEP_GRAND_CHEROKEE, CAR.JEEP_GRAND_CHEROKEE_2019):
       ret.steerActuatorDelay = 0.2
