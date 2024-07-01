@@ -47,15 +47,11 @@ class CarInterface(CarInterfaceBase):
 
     # Jeep
     elif candidate == CAR.JEEP_CHEROKEE_5TH_GEN:
-      ret.steerActuatorDelay = 0.175
+      ret.steerActuatorDelay = 0.125
       ret.lateralTuning.init('pid')
-      # Adjusting breakpoints to be closer to our actual engagement speeds
-      # 18 m/s is about 40mph, 27 m/s is about 60mph
-      ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[18., 26.], [18., 26.]]
-      # Borrowing these tuning values from the Subaru Forester, similar size/weight, just chopped off the low end
-      # https://www.carsized.com/en/cars/compare/jeep-cherokee-2018-suv-trailhawk-vs-subaru-forester-2018-suv/front/
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.07, 0.225], [0.015, 0.025]]
-      ret.lateralTuning.pid.kf = 0.00012
+      ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[14., 26.], [14., 26.]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.065, 0.2], [0.015, 0.025]]
+      ret.lateralTuning.pid.kf = 0.000115
 
     elif candidate in (CAR.JEEP_GRAND_CHEROKEE, CAR.JEEP_GRAND_CHEROKEE_2019):
       ret.steerActuatorDelay = 0.2
